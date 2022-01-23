@@ -1,0 +1,7 @@
+// Name: Zhaokai Guan
+// Student NO: 130988215
+// Workshop (1): Reflection
+
+
+1. This is my first workshop for OOP244, and I have already learned a lot by completing it. The biggest take away is how to properly code and include the header file for each module. I must confess that I did not put enough efforts on this aspect of coding. I was one of those guys who include everything just like the professor Fardad mentioned during the lecture. Thanks to this lecture, I finally figured out the proper way to do this. Another thing benefits me a lot is that I could practice a lot regarding to the syntax in C++. For example, cout is more powerful and easier to use compared to printf especially if I want to print out multiple lines of outputs. I have already start loving the syntax in C++. 
+As for the difficulty, the only thing bothered me for like 20 minutes was the strStr function. At first I was trying to redesigned that function in order to make it not case-sensitive, but it does not work very well. Then I went back to the lecture video and used the approach which professor Fardad Mentioned. Well, that proved the point everything from our lecture could be potentially beneficial for the very near future. 
