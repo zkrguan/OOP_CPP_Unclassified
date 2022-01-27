@@ -1,14 +1,20 @@
 /* ------------------------------------------------------
+I have done all the coding by myself and
+only copied the code that my professor provided
+to complete my workshops and assignments.
+
 Workshop 2 part 1
 Module:      Car
 Filename:    Car.h
-Version:     1
+Version:     2
 Author:	    Zhaokai Guan
 Student Num: 130988215
 Email:       zguan25@myseneca.ca
+
 Revision History
 -----------------------------------------------------------
-Date       Reason
+Date:Jan 27th 2022     Reason: Added the declaration statement
+										 on the top of the file.
 -----------------------------------------------------------*/
 
 #ifndef SDDS_CAR_H
