@@ -1,15 +1,16 @@
 /* ------------------------------------------------------
-Workshop 1 part 2
-
-Module:   cStrTools
-Filename: cStrTools.cpp
-Version:  1
-Author:   Zhaokai Guan
-
+Workshop 2 part 1
+Module:      cStrTools
+Filename:    cStrTools.cpp
+Version:     1
+Author:	    Zhaokai Guan
+Student Num: 130988215
+Email:       zguan25@myseneca.ca
 Revision History
 -----------------------------------------------------------
 Date       Reason
 -----------------------------------------------------------*/
+
 #include <iostream>
 #include "cStrTools.h"
 using namespace std;

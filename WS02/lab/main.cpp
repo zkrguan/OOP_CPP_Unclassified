@@ -1,20 +1,24 @@
 /* ------------------------------------------------------
 Workshop 2 part 1
-Module: N/A
-Filename: main.cpp
-Version 1
-Author	Fardad Soleimanloo
+Module:      N/A
+Filename:    main.cpp
+Version:     1
+Author:	    Zhaokai Guan
+Student Num: 130988215
+Email:       zguan25@myseneca.ca
 Revision History
 -----------------------------------------------------------
 Date       Reason
 -----------------------------------------------------------*/
+
+// main.cpp given by prof.//
 #include "Car.h"
 using namespace sdds;
 
 int main(){
    Car C;
    VBPLE_Title();
-   initialize(2); // set this later to 5
+   initialize(5); // set this later to 5
    while (read(C)) {
       record(C);
    }

@@ -1,7 +1,20 @@
+/* ------------------------------------------------------
+Workshop 2 part 1
+Module:      Car
+Filename:    Car.h
+Version:     1
+Author:	    Zhaokai Guan
+Student Num: 130988215
+Email:       zguan25@myseneca.ca
+Revision History
+-----------------------------------------------------------
+Date       Reason
+-----------------------------------------------------------*/
+
 #ifndef SDDS_CAR_H
 #define SDDS_CAR
 namespace sdds {
-
+	 
 	 const int license_Plate_size = 9;
 
 	 struct Car{
