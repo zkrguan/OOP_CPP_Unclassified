@@ -1,10 +1,16 @@
 /* ------------------------------------------------------
+I have done all the coding by myself and 
+only copied the code that my professor provided 
+to complete my workshops and assignments.
+
 Workshop 2 part 2
-Module: N/A
-Filename: main.cpp
-Version 1
-Author	Fardad Soleimanloo
-Revision History
+Module:      N/A
+Filename:    main.cpp
+Version:     1
+Author:	    Zhaokai Guan
+Student Num: 130988215
+Email:       zguan25@myseneca.ca
+
 -----------------------------------------------------------
 Date       Reason
 -----------------------------------------------------------*/
