@@ -1,20 +1,17 @@
 /* ------------------------------------------------------
-I have done all the coding by myself and 
-only copied the code that my professor provided 
-to complete my workshops and assignments.
-
 Workshop 2 part 2
-Module:      cStrTools
-Filename:    cStrTools.h
-Version:     1
-Author:	    Zhaokai Guan
-Student Num: 130988215
-Email:       zguan25@myseneca.ca
-
+Module: cStrTools
+Filename: cStrTools.h
+Filename: main.cpp
+Version 1
+Author	Fardad Soleimanloo
 Revision History
 -----------------------------------------------------------
-Date:   Reason: 
------------------------------------------------------------*/
+Date       Reason
+//-----------------------------------------------------------*/
+// This module is given by prof.//
+// Comments are mostly made by me to understand better each function//
+//-----------------------------------------------------------*/
 
 
 #ifndef SDDS_CSTRTOOLS_H
