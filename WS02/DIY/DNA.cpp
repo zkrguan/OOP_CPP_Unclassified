@@ -25,8 +25,8 @@ Date:   Reason:
 using namespace std;
 
 namespace sdds {
-    const int DNA_Str_arr_increment = 20;
     const int storage_size_increment = 2;
+    const int max_DNA_str_size = 1001;
     int DNA_Str_arr_size = 20;
     int storage_Arr_size = 2; 
     int matches_counter = 0;
@@ -41,34 +41,16 @@ namespace sdds {
     bool read(const char* subDNA) {
         // reset the counter and the temp_recorder every time when the function gets called//
         matches_counter = 0;
-        DNA temp_data_recorder = { {0} };
-        matches_Storage = new DNA [storage_Arr_size];
+        storage_Arr_size = 2;
+        int temp_DNA_num = 0;
+        char temp_String_holder[max_DNA_str_size] = { 0 };
+        matches_Storage = new DNA[storage_Arr_size];
         // Otherwise the search function can be only running once// 
         rewind(DNA_file_ptr);
-
-        while (fscanf(DNA_file_ptr, "%d,", &temp_data_recorder.DNA_Num)!=EOF){
-            bool read_str_crtl = true;
-            temp_data_recorder.DNA_String = new char[DNA_Str_arr_size];
-            // implement DMA for string recording //
-            for (int i = 0;read_str_crtl; i++){
-                if (i == (DNA_Str_arr_size - 1)) {
-                    char* temp_Str_arr = new char[DNA_Str_arr_size + DNA_Str_arr_increment];
-                    for (int j = 0; j < i; j++) {
-                        temp_Str_arr[j] = temp_data_recorder.DNA_String[j];
-                    }
-                    delete[] temp_data_recorder.DNA_String;
-                    temp_data_recorder.DNA_String = temp_Str_arr;
-                    DNA_Str_arr_size += DNA_Str_arr_increment;
-                }
-                fscanf(DNA_file_ptr, "%c", &temp_data_recorder.DNA_String[i]);
-                if (temp_data_recorder.DNA_String[i]=='\n'){
-                    temp_data_recorder.DNA_String[i] = '\0';
-                    read_str_crtl = false; 
-                }
-            }
+        while (fscanf(DNA_file_ptr, "%d,%s\n", &temp_DNA_num,temp_String_holder) != EOF) {
             // citation (1): Calling prof.'s cstrtools function in the if condition//
             // implement DMA for matches storage//
-            if (strStr(temp_data_recorder.DNA_String,subDNA)){
+            if (strStr(temp_String_holder,subDNA)){
                 if (matches_counter==storage_Arr_size){
                     DNA* temp_holder = new DNA[storage_Arr_size+storage_size_increment];
                     for (int i = 0; i < storage_Arr_size; i++){
@@ -78,7 +60,10 @@ namespace sdds {
                     matches_Storage = temp_holder;
                     storage_Arr_size += storage_size_increment;
                 }
-                matches_Storage[matches_counter] = temp_data_recorder;
+                matches_Storage[matches_counter].DNA_Num = temp_DNA_num;
+                // citation (2) and (3): Calling prof.'s cstrtools function in the following 2 lines//
+                matches_Storage[matches_counter].DNA_String = new char[strLen(temp_String_holder)+1];
+                strCpy(matches_Storage[matches_counter].DNA_String, temp_String_holder);
                 matches_counter++;
             }
         }
@@ -88,7 +73,7 @@ namespace sdds {
     void sort() {
         // using the traditional bubble sort learned from last year to acomplish this//
         int i, j;
-        DNA temp = {{0}};
+        DNA temp = {0};
         // Will not use i to access each element. //
         // i is more like a round counter in order to run enough times for the sorting..//
         for ( i = matches_counter-1; i > 0 ; i--){
@@ -117,17 +102,23 @@ namespace sdds {
 
     // Not only deallocate the struct arr, but also deallocate each member from each arr element//
     void deallocate() {
-        for (int i = 0; i < matches_counter; i++){
-            delete[] matches_Storage[i].DNA_String;
-            matches_Storage[i].DNA_String = nullptr;            
+        if (matches_counter){
+            for (int i = 0; i < matches_counter; i++) {
+                deallocateIndividual(matches_Storage[i]);
+            }
+            delete[] matches_Storage;
+            matches_Storage = nullptr;
         }
-        delete[] matches_Storage;
-        matches_Storage = nullptr;
+    }
+
+
+    void deallocateIndividual(DNA& dna_arr_element) {
+        delete[] dna_arr_element.DNA_String;
+        dna_arr_element.DNA_String = nullptr;
     }
 
     // fclose file ptr and set it as nullptr to exit gracefully//
     void endSearch() {
-        
         fclose(DNA_file_ptr);
         DNA_file_ptr = nullptr;
         cout << "DNA Search Program Closed." << endl;

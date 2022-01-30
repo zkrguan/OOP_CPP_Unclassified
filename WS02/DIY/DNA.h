@@ -41,5 +41,7 @@ namespace sdds {
     void deallocate();
     // End the program gracefully close .csv file 
     void endSearch();
+    // Created for deallocate each member of the struct//
+    void deallocateIndividual(DNA& dna_arr_element);
 }
 #endif // !SDDS_DNA_H
