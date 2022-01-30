@@ -1,0 +1,19 @@
+/* ------------------------------------------------------
+I have done all the following writing by 
+myself without any helps from the others.
+
+Workshop 2 reflect
+Version:     1
+Author:	Zhaokai Guan
+Student Num: 130988215
+Email:       zguan25@myseneca.ca
+Date:        Jan 29th 2022
+
+
+Revision History
+-----------------------------------------------------------
+Date:   Reason:
+-----------------------------------------------------------*/
+
+
+This is the second workshop I have completed, and honestly, OOP244 is already getting difficult at a steady pace. At the same time, I did learn a lot of not only knowledges but also skills from this course. Speaking of the workshop 2, I learned overloading functions and the function’s signatures and using reference in a function’s parameter. But the biggest take away it has to be the dynamic memory allocation. I was actually shocked when the professor introduced this topic.  It looks not very hard when the professor was demonstrating the coding, but when I actually start working on the workshop especially during the DIY part, I can only say the stress is real. Even with the help from my notes, sometimes I still make some mistakes which could not trigger the compiler alert. As a result, when the program is running on the matrix with the Valgrind checking, I had a world record high memory leak it was around 24000kb. Then afterwards, I had to watch a few YouTube videos to understand what exactly does each error statement. Debugging the memory leak is not as easy as I expected. After tracking each suspicious variable for 3 hours, I finally found out the stupid mistake I made. Hope this unpleasant experience would always keep myself alerted whenever I needed to implement the DMA in the future. This course is actually the best coding class so far since I started learning at Seneca, and I have improved a lot compared to last semester.  If I can survive, my coding skills and knowledges will be on the next level for sure. 
