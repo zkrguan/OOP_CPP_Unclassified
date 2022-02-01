@@ -4,6 +4,7 @@ only copied the code that my professor provided
 to complete my workshops and assignments.
 
 Workshop 2 part 2
+Course title:OOP244 NBB
 Module:      DNA
 Filename:    DNA.cpp
 Version:     1
@@ -27,7 +28,6 @@ using namespace std;
 namespace sdds {
     const int storage_size_increment = 2;
     const int max_DNA_str_size = 1001;
-    int DNA_Str_arr_size = 20;
     int storage_Arr_size = 2; 
     int matches_counter = 0;
     FILE* DNA_file_ptr = nullptr;
@@ -48,7 +48,7 @@ namespace sdds {
         // Otherwise the search function can be only running once// 
         rewind(DNA_file_ptr);
         while (fscanf(DNA_file_ptr, "%d,%s\n", &temp_DNA_num,temp_String_holder) != EOF) {
-            // citation (1): Calling prof.'s cstrtools function in the if condition//
+            // Calling prof.'s cstrtools function "strStr"//
             // implement DMA for matches storage//
             if (strStr(temp_String_holder,subDNA)){
                 if (matches_counter==storage_Arr_size){
@@ -61,7 +61,7 @@ namespace sdds {
                     storage_Arr_size += storage_size_increment;
                 }
                 matches_Storage[matches_counter].DNA_Num = temp_DNA_num;
-                // citation (2) and (3): Calling prof.'s cstrtools function in the following 2 lines//
+                // Calling prof.'s cstrtools functions strLen and strCpy//
                 matches_Storage[matches_counter].DNA_String = new char[strLen(temp_String_holder)+1];
                 strCpy(matches_Storage[matches_counter].DNA_String, temp_String_holder);
                 matches_counter++;
@@ -104,17 +104,12 @@ namespace sdds {
     void deallocate() {
         if (matches_counter){
             for (int i = 0; i < matches_counter; i++) {
-                deallocateIndividual(matches_Storage[i]);
+                delete[] matches_Storage[i].DNA_String;
+                matches_Storage[i].DNA_String = nullptr;
             }
             delete[] matches_Storage;
             matches_Storage = nullptr;
         }
-    }
-
-
-    void deallocateIndividual(DNA& dna_arr_element) {
-        delete[] dna_arr_element.DNA_String;
-        dna_arr_element.DNA_String = nullptr;
     }
 
     // fclose file ptr and set it as nullptr to exit gracefully//

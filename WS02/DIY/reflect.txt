@@ -3,8 +3,9 @@ I have done all the following writing by
 myself without any helps from the others.
 
 Workshop 2 reflect
+Course title:OOP244 NBB
 Version:     1
-Author:	Zhaokai Guan
+Author:	     Zhaokai Guan
 Student Num: 130988215
 Email:       zguan25@myseneca.ca
 Date:        Jan 29th 2022

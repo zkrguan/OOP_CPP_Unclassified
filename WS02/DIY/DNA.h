@@ -4,6 +4,7 @@ only copied the code that my professor provided
 to complete my workshops and assignments.
 
 Workshop 2 part 2
+Course title:OOP244 NBB
 Module:      DNA
 Filename:    DNA.h
 Version:     1
@@ -25,7 +26,6 @@ namespace sdds {
         int DNA_Num;
         char* DNA_String;
     };
-
     // function prototypes
      
     // the bool value will decide if the file opened successfully//
@@ -41,7 +41,5 @@ namespace sdds {
     void deallocate();
     // End the program gracefully close .csv file 
     void endSearch();
-    // Created for deallocate each member of the struct//
-    void deallocateIndividual(DNA& dna_arr_element);
 }
 #endif // !SDDS_DNA_H
