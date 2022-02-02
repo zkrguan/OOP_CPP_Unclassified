@@ -82,4 +82,73 @@ namespace sdds{
           cout << "SPEED             : " << m_train_Speed << endl;
        }
     }
+
+    bool Train::loadPeople(int peopleInput){
+       bool res = true;
+       if (isSafeEmpty()){
+          res = false;
+       }
+      
+       else{
+          if (m_ppl_On_Board + peopleInput<=MAX_PEOPLE&&m_ppl_On_Board+peopleInput>=0){
+             m_ppl_On_Board += peopleInput;
+          }
+          if(m_ppl_On_Board + peopleInput <0){
+             m_ppl_On_Board = 0;
+          }
+          if (m_ppl_On_Board + peopleInput >MAX_PEOPLE){
+             m_ppl_On_Board = MAX_PEOPLE;
+          }
+          
+       }
+       return res;
+    }
+
+    bool Train::changeSpeed(double speed_input){
+       bool res = true;
+       if (isSafeEmpty()){
+          res = false;
+       }
+       else{
+          if (m_train_Speed+speed_input>=0&&m_train_Speed+speed_input<=MAX_SPEED){
+             m_train_Speed += speed_input;
+          }
+          if (m_train_Speed + speed_input < 0){
+             m_train_Speed = 0;
+          }
+          if (m_train_Speed + speed_input > MAX_SPEED) {
+             m_train_Speed = MAX_SPEED;
+          }
+
+       }
+       return res;
+    }
+
+
+
+
+
+    int transfer(Train& src_train, Train& dst_train){
+       int res = 0;
+       if (src_train.isSafeEmpty() && dst_train.isSafeEmpty()){
+          if (src_train.getNumberOfPeople() + dst_train.getNumberOfPeople()<=MAX_PEOPLE){
+             dst_train.loadPeople(src_train.getNumberOfPeople());
+             src_train.loadPeople(-(src_train.getNumberOfPeople()));
+             res = MAX_PEOPLE;
+          }
+          else{
+             dst_train.loadPeople(MAX_PEOPLE- src_train.getNumberOfPeople());
+             src_train.loadPeople(MAX_PEOPLE - src_train.getNumberOfPeople());
+             res = MAX_PEOPLE - src_train.getNumberOfPeople();
+          }
+
+       }
+       else{
+          // Returns 
+          res = -1;
+       }
+       // first check both trains
+       return res;
+    }
+
 }
