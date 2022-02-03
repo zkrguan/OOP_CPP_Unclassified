@@ -30,7 +30,7 @@ namespace sdds{
 
           string m_Train_Name's first element is null terminator.
 
-          int m_ppl_On_Board equals to -2 ( do not make any sense in reality.
+          int m_ppl_On_Board equals to -2 ( do not make any sense in reality.)
 
           double m_train_Speed equals to -320.5 ( even when the train is reversing, the speed
             can not reach that fast)
@@ -40,6 +40,7 @@ namespace sdds{
           m_ppl_On_Board = ppl;
           m_train_Speed = speed;
        }
+       // reset it to the safe and empty//
        else {
           m_train_Name[0] = 0;
           m_ppl_On_Board = -2;
@@ -65,7 +66,7 @@ namespace sdds{
 
           string m_Train_Name's first element is null terminator.
 
-          int m_ppl_On_Board equals to -2 ( do not make any sense in reality.
+          int m_ppl_On_Board equals to -2 ( do not make any sense in reality.)
 
           double m_train_Speed equals to -320.5 ( even when the train is reversing, the speed
             can not reach that fast)
@@ -76,10 +77,13 @@ namespace sdds{
        if (isSafeEmpty()){
           cout << "Safe Empty State!" << endl;
        }
+       // display the following info when it is not safe and empty//
        else{
           cout << "NAME OF THE TRAIN : " << m_train_Name << endl;
           cout << "NUMBER OF PEOPLE  : " << m_ppl_On_Board << endl;
-          cout << "SPEED             : " << m_train_Speed << endl;
+          cout.setf(ios::fixed);
+          cout.precision(2);
+          cout << "SPEED             : " << m_train_Speed << " km/h" << endl;
        }
     }
 }

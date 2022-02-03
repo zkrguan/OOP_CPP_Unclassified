@@ -25,38 +25,21 @@ namespace sdds {
 	 const int MAX_PEOPLE = 1000;
 	 const int MAX_SPEED = 320;
 
-
 	 class Train {
 		  char m_train_Name[MAX_NAME_LENGTH];
 		  int  m_ppl_On_Board;
 		  double  m_train_Speed;
 	 
-
-
 	 public:
-		  // set the train's 3 members up//
+		  //modifier functions//
 		  void set(const char* train_name, int num_Of_Ppl, double speed);
+		  // query functions//
 		  int getNumberOfPeople() const;
 		  const char* getName() const;
 		  double getSpeed() const;
 		  bool isSafeEmpty() const;
 		  void display() const;
 	 };
-	 
-
-
-
-
-
-	 
-
-	
-	
-	
-
-
-
-
 }
 #endif // !SDDS_TRAIN_H
 
