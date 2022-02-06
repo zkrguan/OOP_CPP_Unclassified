@@ -3,7 +3,7 @@ I have done all the coding by myself and
 only copied the code that my professor provided
 to complete my workshops and assignments.
 
-Workshop 3 part 1
+Workshop 3 part 2
 Course title:OOP244 NBB
 Module:      Train
 Filename:    Train.h

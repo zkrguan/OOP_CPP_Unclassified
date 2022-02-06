@@ -1,0 +1,20 @@
+/* ------------------------------------------------------
+I have done all the coding by myself and
+only copied the code that my professor provided
+to complete my workshops and assignments.
+
+Workshop 3 part 2
+Course title:OOP244 NBB
+Filename:    reflect.txt
+Version:     1
+Author:	    Zhaokai Guan
+Student Num: 130988215
+Email:       zguan25@myseneca.ca
+Date:        Feb 2nd 2022
+
+Revision History
+-----------------------------------------------------------
+Date:   Reason:
+-----------------------------------------------------------*/
+
+Frankly speaking, this workshop was not very difficult compared to the previous one. Therefore, I had a great opportunity to digest whatever I learned from the previous lectures. Mostly, I learned some basic ideas on how to code under the object orientated rules. To be more specific, I learned the difference between a struct and a class, the knowledges about how to call the public functions to access the class data. The biggest take away must be the mindset of combining the behaviors and the data under one struct or class. In this way, we could achieve the encapsulation goal of the object orientated programming.  To be honest, before the lecture, I would not even release we could actually put functions into a class. I am gradually switching my mind from the coding based on function to object orientated programming. The biggest difficulty from this workshop can be the way to access the data from the function. Sometimes I did not even realized this function is declared under the class, so I tried to access the class data by receiving the values from the function parameters. This is actually so stupid, and as soon as I realized that, completing this workshop was not very difficult at the end. 
