@@ -11,17 +11,18 @@ namespace sdds {
 	}
 
 	CarInventory::CarInventory(const char* type, const char* brand, const char* model, int year, int code, double price) {
-
+		m_brand = new char[strlen(brand) + 1];
+		m_model = new char[strlen(model) + 1];
+		m_type = new char[strlen(type) + 1];
 		bool valid = type && brand && model && year >= 1990 && code >= 100 && code <= 999 && price > 0;
-
 		if (!valid) {
+			delete[] m_brand;
+			delete[] m_type;
+			delete[] m_model;
 			resetInfo();
 		}
 
 		else {
-			m_brand = new char[strlen(brand) + 1];
-			m_model = new char[strlen(model) + 1];
-			m_type = new char[strlen(type) + 1];
 			strcpy(m_brand, brand);
 			strcpy(m_model, model);
 			strcpy(m_type, type);
@@ -49,6 +50,9 @@ namespace sdds {
 	}
 
 	CarInventory& CarInventory::setInfo(const char* type, const char* brand, const char* model, int year, int code, double price) {
+		delete[] m_brand;
+		delete[] m_type;
+		delete[] m_model;
 		resetInfo();
 		bool valid = type && brand && model && year >= 1990 && code >= 100 && code <= 999 && price > 0;
 		if (!valid) {
