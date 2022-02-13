@@ -1,7 +1,5 @@
 /* ------------------------------------------------------
-I have done all the coding by myself and
-only copied the code that my professor provided
-to complete my workshops and assignments.
+I have done all the writting by myself
 
 Workshop 4 reflect
 Course title:OOP244 NBB
