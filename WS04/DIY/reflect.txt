@@ -1,0 +1,21 @@
+/* ------------------------------------------------------
+I have done all the coding by myself and
+only copied the code that my professor provided
+to complete my workshops and assignments.
+
+Workshop 4 reflect
+Course title:OOP244 NBB
+Module:      Robot
+Filename:    Robot.h
+Version:     1
+Author:	     Zhaokai Guan
+Student Num: 130988215
+Email:       zguan25@myseneca.ca
+Date:        Feb 10th 2022
+
+Revision History
+-----------------------------------------------------------
+Date:   Reason:
+-----------------------------------------------------------*/
+
+	This workshop was not the hardest one I have done so far. However, I did learn a lot of knowledges and skills from it. To be more specific, I was able to practice whatever I learned from the lecture about constructor and destructor. Also, by completing this workshop, I also had a chance to implementing overloading constructors just like overloading the functions. Moreover, I implemented the part 2 with some of the tricks professor Fardad showed during the lecture. Like the class functions returns the current object’s reference, so I can set the attribute safe and empty then directly call the setter functions by using dot operator. One statement did two things which is pretty cool. However, I would say the biggest take away must the deeper understanding about the memory leak and how to avoid it. Before I was really confused about when to deallocate and when to initialized. After this workshop, I am very sure that I totally understood it. No memory leak at the first submission test made me feel so good. As for the difficulty, I would say the output format did cause me some headaches. I had to go back to the text book and previous lecture recordings to actually understand every single cout method. At the end, I was able to overcome this challenge and successfully fix the format. With the completion of each workshop, I do feel I am improving at a significant speed. This is the best coding course so far at Seneca. 
