@@ -8,7 +8,7 @@ Course title:OOP244 NBB
 Module:      Robot
 Filename:    Robot.cpp
 Version:     1
-Author:	     Zhaokai Guan
+Author:	    Zhaokai Guan
 Student Num: 130988215
 Email:       zguan25@myseneca.ca
 Date:        Feb 10th 2022
@@ -19,14 +19,12 @@ Date:   Reason:
 -----------------------------------------------------------*/
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
-#include<string.h>
+#include <string.h>
 #include "Robot.h"
 
 using namespace std;
 
 namespace sdds {
-
-
    // constructors and destructors//
    Robot::Robot() {
       setSafeAndEmpty();
@@ -40,29 +38,8 @@ namespace sdds {
       setSafeAndEmpty().set(name, location, weight, width, height, speed, status);
    }
 
-
-   //private functions//
-   //query functions//
-   char* Robot::getName() const
-   {
-      return m_Name;
-   }
-
-   char* Robot::getLocation() const
-   {
-      return m_Location;
-   }
-
-   bool Robot::isDeployed() const
-   {
-      return m_Depolyed;
-   }
-
-   double Robot::getSpeed() const
-   {
-      return m_Speed;
-   }
-
+   // returns a reference of the current object, 
+   // so the the overloaded constructor can can the set function right away 
    Robot& Robot::setSafeAndEmpty(){
       /* safeand empty defined by Zhaokai
          all the char pointers are equal to nullptr
@@ -84,44 +61,36 @@ namespace sdds {
       delete[] m_Name;
       delete[] m_Location;
       setSafeAndEmpty();
-      // or we call setSafe and empty???//
    }
 
-  
    // public functions//
    // query function //
-   
+   // query functions//
+   char* Robot::getName() const
+   {
+      return m_Name;
+   }
+
+   char* Robot::getLocation() const
+   {
+      return m_Location;
+   }
+
+   bool Robot::isDeployed() const
+   {
+      return m_Depolyed;
+   }
+
+   double Robot::getSpeed() const
+   {
+      return m_Speed;
+   }
+
    bool Robot::isValid() const{
       return m_Speed>0;
    }
+
    void Robot::display() const{
-     /* cout << "| ";
-      cout.width(11);
-      cout.setf(ios::left);
-      cout << "Robot ID";
-      cout << "| ";
-      cout.width(16);
-      cout << "Location";
-      cout << "| ";
-      cout.width(7);
-      cout.unsetf(ios::left);
-      cout.setf(ios::right);
-      cout << "Weight";
-      cout << " |  ";
-      cout.width(5);
-      cout << "Width";
-      cout << " | ";
-      cout.width(5);
-      cout << "Height";
-      cout << " |  ";
-      cout.width(5);
-      cout << "Speed";
-      cout.unsetf(ios::right);
-      cout.unsetf(ios::fixed);
-      cout << " | ";
-      cout.width(7);
-      cout << "Deployed";
-      cout << " |" << endl;*/
       cout << "| ";
       cout.setf(ios::left);
       cout.width(11);
@@ -153,17 +122,18 @@ namespace sdds {
       cout << " |" << endl;
    }
 
-
-
    // modifer functions//
 
    Robot& Robot::set(const char* name, const char* location, double weight, double width, double height, double speed, bool depolyment){
-    // start DMA//
+      // deallocate first//
       deallocate();
+      // then dynamic array to store the string//
       m_Name = new char[strlen(name) + 1];
+      // copy the value over to the dynamic array//
       strcpy(m_Name, name);
       m_Location = new char[strlen(location) + 1];
       strcpy(m_Location, location);
+      // copy the value one by one//
       m_Weight = weight;
       m_Width = width;
       m_Height = height;
@@ -179,23 +149,12 @@ namespace sdds {
       return *this;
    }
 
-
-
-
    Robot& Robot::setDeployed(bool newStatus){
       m_Depolyed = newStatus;
       return *this;
    }
 
-
-
-
-
-   
-
-
-
-   // global function //
+   // global functions //
    void displayReportTitle(int topspeed) {  
       if (!topspeed) {
          cout << "                        ------ Robot Control Room -----" << endl;
@@ -244,35 +203,39 @@ namespace sdds {
       cout.width(56);
       cout << "|" << endl;
       cout.unsetf(ios::right);
-
-
    }
 
-
-   int conrtolRooomReport(const Robot robot[], int num_robots){
+   int conrtolRooomReport(const Robot robot[], int num_robots) {
       int result = 0;
       int deploymnet_couter = 0;
       int top_speed_index = 0;
+      int i = 0;
       displayReportTitle();
 
-      for (int i = 0; i < num_robots && robot[i].isValid();i++) {
-         robot[i].display();
-         deploymnet_couter += robot[i].isDeployed();
-         top_speed_index = (robot[top_speed_index].getSpeed()<robot[i].getSpeed()) ? i : top_speed_index;
+      for (i = 0; i < num_robots && i>=0; i++) {
          result = i;
+         if (robot[i].isValid()){
+            robot[i].display();
+            // check if the robot is deployed and count how many robots are deployed //
+            deploymnet_couter += robot[i].isDeployed();
+            // find the top_speed's index //
+            top_speed_index = (robot[top_speed_index].getSpeed() < robot[i].getSpeed()) ? i : top_speed_index;
+            // result will count how many times this for loop has been executed //
+         }
+         else{
+            // once it is not valid, get out from the for loop//
+            i = -9;
+         }  
       }
-      if (result){
-         result++;
-      }
-      if ((result)==num_robots){
+      // biggest index + 1 = array size//
+      if (result+1 == num_robots) {
          displaySummary(deploymnet_couter);
          displayReportTitle(top_speed_index);
          robot[top_speed_index].display();
-         cout << "|=============================================================================|"<<endl;
-
+         cout << "|=============================================================================|" << endl;
       }
-      int flag = 0;
-      return flag = (result == num_robots) ? -1 : result;
+      // if result +1 = array size, then return -1 meaning all the robots are good now// 
+      return result = (result+1 == num_robots) ? -1 : result;
    }
 
    
