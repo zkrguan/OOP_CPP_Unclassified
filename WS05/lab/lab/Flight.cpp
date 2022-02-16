@@ -239,6 +239,10 @@ namespace sdds {
           }
        }
        return result;
+      /* return !(strcmp(m_title, second_Flight.m_title)) &&
+          (m_passengers == second_Flight.m_passengers) &&
+          (m_fuel == second_Flight.m_fuel); */
+
     }
     
     // binary helper operators//
