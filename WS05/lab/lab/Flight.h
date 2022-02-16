@@ -62,7 +62,6 @@ namespace sdds {
       std::ostream& display()const;
       
       //the following parts are done by Zhaokai Guan//
-      
       //type conversion operators//
       operator bool()const;
       operator int()const;
@@ -82,8 +81,9 @@ namespace sdds {
       Flight& operator -=(int reducing_Guests);
       Flight& operator <<(Flight& source_Flight);
       Flight& operator >>(Flight& destination_flight);
+      // Non-required overloaded operator from the instruction//
+      // In order to increase the readability//
       bool operator !=(Flight& second_flight)const;
-
    };
 
    //binary helper operator//

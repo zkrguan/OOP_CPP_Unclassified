@@ -18,8 +18,8 @@ Revision History
 Date:   Reason:
 -----------------------------------------------------------*/
 
-
 // professor's remarks//
+
 /* ------------------------------------------------------
 Workshop 5 part 1
 Module: Flight
@@ -102,7 +102,7 @@ namespace sdds {
         return cout;
     }
 
-    //The following function or method defintions are made by Zhaokai Guan
+    //The following function or method defintions are made by Zhaokai Guan//
     
     Flight::operator bool() const{
        return m_passengers > 0 && m_fuel >= m_passengers * requiredFuelPerPassenger ? true : false;
@@ -125,9 +125,11 @@ namespace sdds {
     }
 
     Flight& Flight::operator=(Flight& right_Operand){
+       // dup the data from the right_Operand//
        strcpy(m_title, right_Operand.m_title);
        m_passengers = right_Operand.m_passengers;
        m_fuel = right_Operand.m_fuel;
+       // then empty the right_Operand//
        right_Operand.emptyPlane();
        return *this;
     }
@@ -172,6 +174,7 @@ namespace sdds {
 
     Flight& Flight::operator-=(double reducing_Fuel){
        if (reducing_Fuel>0.0){
+          // makes sure the m_fuel won't be negative//
           if ((m_fuel-reducing_Fuel)>0.0){
              m_fuel -= reducing_Fuel;
           }
@@ -184,6 +187,7 @@ namespace sdds {
 
     Flight& Flight::operator-=(int reducing_Guests){
        if (reducing_Guests>0){
+          // makes sure the m_passengers won't be negative//
           if ((m_passengers - reducing_Guests) > 0) {
              m_passengers -= reducing_Guests;
           }
@@ -197,12 +201,15 @@ namespace sdds {
     Flight& Flight::operator<<(Flight& source_Flight) {
        //overloaded != operator to check if the two flights are the same//
        if (!( *this != source_Flight)) {
+          //makes sure the dst flight won't go over the Capacity//
           if ((m_passengers+source_Flight.m_passengers)<Boen747Capacity){
              m_passengers += source_Flight.m_passengers;
              source_Flight.m_passengers = 0;
           }
           else{
+             // capacity - dst's passenger will be the amount moved from the src//
              source_Flight.m_passengers -= (Boen747Capacity - m_passengers);
+             // dst passgenger will be right at the capacity//
              m_passengers = Boen747Capacity;             
           }
        }
@@ -212,6 +219,7 @@ namespace sdds {
     Flight& Flight::operator>>(Flight& destination_Flight){
        //overloaded != operator to check if the two flights are the same//
        if (!(*this!=destination_Flight)){
+          //similar desgin as the overloaded operator <<//
           if ((destination_Flight.m_passengers+m_passengers)<Boen747Capacity){
              destination_Flight.m_passengers += m_passengers;
              m_passengers = 0;
@@ -227,7 +235,6 @@ namespace sdds {
     // build to increase the readbility and avoid the repeatition//
     // Otherwise there will be a super long condition inside << and >> methods//
     bool Flight::operator!=(Flight& second_Flight)const{
-       
        // Professor Fardad gave me the advice on this block of code//
        /*bool result = false;
        if (!(strcmp(m_title, second_Flight.m_title))){
@@ -248,12 +255,13 @@ namespace sdds {
 
        // I implemented in this way since I am more used to tenary expression.//
        // I don't want to just copy paste whatever professor said//
-       // Although it is slower than professor's, but it is developed by myself//
        bool result;
        return result = (!(strcmp(m_title, second_Flight.m_title)) &&
           (m_passengers == second_Flight.m_passengers) &&
           (m_fuel == second_Flight.m_fuel)) ?
           true : false;
+       //To future me: use enter to visually seperate the codes to increase the readability//
+       // In this way, you won't have any super long statement to confuse the others//
     }
     
     // binary helper operators//
