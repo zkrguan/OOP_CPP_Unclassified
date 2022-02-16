@@ -6,12 +6,12 @@ to complete my workshops and assignments.
 Workshop 5 part 1
 Course title:OOP244 NBB
 Module:      Flight
-Filename:    Flight.h
+Filename:    Flight.cpp
 Version:     1
 student:	    Zhaokai Guan
 Student Num: 130988215
 Email:       zguan25@myseneca.ca
-Date:        Feb 9th 2022
+Date:        Feb 15th 2022
 
 Revision History
 -----------------------------------------------------------
@@ -155,7 +155,6 @@ namespace sdds {
              m_fuel = FuelTankCapacity;
           }
        }
-    
        return *this;
     }
 
@@ -221,7 +220,6 @@ namespace sdds {
              m_passengers -= (Boen747Capacity - destination_Flight.m_passengers);
              destination_Flight = Boen747Capacity;
           }
-
        }
        return *this;
     }
@@ -229,7 +227,9 @@ namespace sdds {
     // build to increase the readbility and avoid the repeatition//
     // Otherwise there will be a super long condition inside << and >> methods//
     bool Flight::operator!=(Flight& second_Flight)const{
-       bool result = false;
+       
+       // Professor Fardad gave me the advice on this block of code//
+       /*bool result = false;
        if (!(strcmp(m_title, second_Flight.m_title))){
           if (m_passengers==second_Flight.m_passengers){
              if (m_fuel==second_Flight.m_fuel)
@@ -238,11 +238,22 @@ namespace sdds {
              }
           }
        }
-       return result;
-      /* return !(strcmp(m_title, second_Flight.m_title)) &&
+       return result;*/
+
+       // professor's suggestion// 
+       // It is very elegant and consise//
+       /* return !(strcmp(m_title, second_Flight.m_title)) &&
           (m_passengers == second_Flight.m_passengers) &&
           (m_fuel == second_Flight.m_fuel); */
 
+       // I implemented in this way since I am more used to tenary expression.//
+       // I don't want to just copy paste whatever professor said//
+       // Although it is slower than professor's, but it is developed by myself//
+       bool result;
+       return result = (!(strcmp(m_title, second_Flight.m_title)) &&
+          (m_passengers == second_Flight.m_passengers) &&
+          (m_fuel == second_Flight.m_fuel)) ?
+          true : false;
     }
     
     // binary helper operators//
