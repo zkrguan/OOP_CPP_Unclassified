@@ -1,0 +1,15 @@
+/* ------------------------------------------------------
+I have done all the writing by myself. 
+Workshop 5 reflect
+Course title: OOP244 NBB
+Version:     1
+student:           Zhaokai Guan
+Student Num: 130988215
+Email:                zguan25@myseneca.ca
+Date:                 Feb 16th 2022
+Revision History
+-----------------------------------------------------------
+Date:   Reason:
+-----------------------------------------------------------*/
+
+  In this workshop, I learned a lot of very expressive tricks about overloading. Before the lecture, I thought that only function can be overloaded. However, during the last week’s lectures, I was again shocked that we could actually overload a lot more than just function. To be more specific, we could overload the binary operator, unary operators, and even the conversion operators like int double. To be honest, there was no significant difficulty while I am doing my workshop. The biggest trouble could be the syntax of implementing different overloading. At first I had to code with the class note files opened. Even by doing this, sometimes, I still make some kind of minor mistakes cause the code does not compile. However, after a few practices, my coding speed is 10 times faster than before. I guess this is why we always need to practice multiple times on the new knowledges before they actually become to a part of your body or something what we called muscle memory. 
