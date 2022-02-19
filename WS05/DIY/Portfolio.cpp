@@ -35,6 +35,7 @@ Initials    Date           Reason
 F.S.        07/02/2022     Peer Review
 -----------------------------------------------------------*/
 #define _CRT_SECURE_NO_WARNINGS
+#include <string.h>
 #include "Portfolio.h"
 
 using namespace std;
@@ -93,7 +94,7 @@ namespace sdds {
     }
 
     // the student code starts from here//
-    // type conversion overload//
+    // type conversion operator overload//
     Portfolio::operator double() const {
        return m_value;
     }
@@ -110,7 +111,7 @@ namespace sdds {
        return m_type == 'G' || m_type == 'V' || m_type == 'I';
     }
 
-    //operator overload//
+    //binary member operator overload//
     Portfolio& Portfolio::operator+=(double adding_Value) {
        if (bool(*this) && adding_Value>0){
           m_value += adding_Value;
@@ -125,11 +126,8 @@ namespace sdds {
        return *this;
     }
 
-    bool Portfolio::operator~() const{
-       return m_value>0;
-    }
     // Built by myself, in order to enhance the readability//
-    bool Portfolio::operator!=(Portfolio& comparing_Portfolio)const {
+    bool Portfolio::operator!=( const Portfolio& comparing_Portfolio)const {
        return strcmp(m_stock, comparing_Portfolio.m_stock);
     }
 
@@ -148,6 +146,12 @@ namespace sdds {
        }
        return *this;
     }
+    
+    //unary member operator overload//
+    bool Portfolio::operator~() const {
+       return m_value < 0;
+    }
+    
     // Binary helper operator overload//
     double operator + (const Portfolio& first_Portfolio, const Portfolio& second_Portfolio) {
        double result = 0.0;

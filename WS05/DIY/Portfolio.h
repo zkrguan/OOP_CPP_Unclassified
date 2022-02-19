@@ -65,7 +65,7 @@ namespace sdds {
       Portfolio& operator<<(Portfolio& src_Portfolio);
       Portfolio& operator>>(Portfolio& dst_Portfolio);
       
-      bool operator!=(Portfolio& comparing_Portfolio)const;
+      bool operator!=(const Portfolio& comparing_Portfolio)const;
    };
    // Binary helper operators overload//
    double operator + (const Portfolio& first_Portfolio, const Portfolio& second_Portfolio);
