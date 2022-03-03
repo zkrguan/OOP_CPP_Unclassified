@@ -57,6 +57,7 @@ void validationTest() {
       {"Fred Soley", 1234567890,"B","Q1234567" },
    };
    cout << "Validation Test" << endl;
+
    for (i = 0; i < 8; cout << C[i++] << endl);
 }
 

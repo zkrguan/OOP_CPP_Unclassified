@@ -28,8 +28,8 @@ namespace sdds {
    const int MaxVcodeLength = 2;
    class HealthCard {
       //added {} beside each member variable to make compiler shut up//
-      char* m_name{};
-      long long m_number{};
+      char* m_name=nullptr;
+      long long m_number=0;
       char m_vCode[3]{};
       char m_sNumber[10]{};
       //private method//
@@ -41,8 +41,7 @@ namespace sdds {
       void set(const char* name, long long number, const char vCode[], const char sNumber[]);
    public:
       //constructors//
-      HealthCard();
-      HealthCard(const char* name, long long number, const char vCode[], const char sNumber[]);
+      HealthCard(const char* name = nullptr, long long number=0, const char vCode[]={}, const char sNumber[]={});
       HealthCard(const HealthCard& hc);
       HealthCard& operator=(const HealthCard& hc);
       ~HealthCard();
