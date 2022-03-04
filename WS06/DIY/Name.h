@@ -1,0 +1,57 @@
+/* ------------------------------------------------------
+I have done all the coding by myself and
+only copied the code that my professor provided
+to complete my workshops and assignments.
+
+Workshop 6 part 2
+Course title:OOP244 NBB
+Module:      Name
+Filename:    Name.h
+Version:     1
+student:	    Zhaokai Guan
+Student Num: 130988215
+Email:       zguan25@myseneca.ca
+Date:        Feb 15th 2022
+
+Revision History
+-----------------------------------------------------------
+Date:   Reason:
+-----------------------------------------------------------*/
+#ifndef SDDS_NAME_H
+#define SDDS_NAME_H
+namespace sdds{
+	
+	class Name{	
+		char* m_firstName{};
+		char* m_middleName{};
+		char* m_lastName{}; 
+		// private methods //
+		Name& setSafeAndEmpty();
+		bool validateEmpty(const char* Name)const;
+		Name& allocAndCopy(const char* Name);
+		
+	public:
+		// constructors //
+		Name();
+		Name(const char* firstName);
+		Name(const char* firstName, const char* lastName);
+		Name(const char* firstName, const char* middleName,const char* lastName);
+		// rule of three //
+		Name(const Name& copySrc);
+		Name& operator =(const Name& asnFrom);
+		~Name();
+		// modifers//
+		Name& setShort(bool flag);
+
+
+
+
+	};
+
+	
+
+
+}
+
+#endif // !SDDS_NAME_H
+
