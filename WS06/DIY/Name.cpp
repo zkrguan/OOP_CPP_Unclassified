@@ -74,14 +74,13 @@ namespace sdds {
 		return *this;
 	}
 
-
 	Name::Name(const Name& copySrc){
 		*this = copySrc;
 	}
 
 	Name& Name::operator=(const Name& asnFrom){
 		if (this!=&asnFrom){
-			if (validateEmpty(asnFrom.m_firstName)||validateEmpty(asnFrom.m_middleName)||validateEmpty(asnFrom.m_lastName)){
+			if (!validateEmpty(asnFrom.m_firstName)||!validateEmpty(asnFrom.m_middleName)||!validateEmpty(asnFrom.m_lastName)){
 				this->allocAndCopy(asnFrom.m_firstName).
 					   allocAndCopy(asnFrom.m_middleName).
 					   allocAndCopy(asnFrom.m_lastName);
@@ -102,22 +101,97 @@ namespace sdds {
 
 	Name& Name::setShort(bool flag){
 		if (flag){
-			if (validateEmpty(m_middleName)){
+			if (!validateEmpty(m_middleName)){
 				char tempInitial[3]{};
-				// 1 or 0!!!!!!!!!!!!!!!!!!!!!!!//
 				strncpy(tempInitial, m_middleName, 1);
+				strcat(tempInitial, ".\0");
 				delete[] m_middleName;
 				// might need a file scope var for size//
 				m_middleName = new char[3];
 				strcpy(m_middleName,tempInitial);
-				strcat(m_middleName, ".\0");
 			}
 		}
 		return *this;
 	}
 
+	Name& Name:: operator+= (const char* stringIn) {
+		if (!validateEmpty(stringIn)){
+			int couter = 0;
+			for (int i = 0; i < strlen(stringIn); i++) {
+				couter += isspace(stringIn[i]) ? 1 : 0;
+			}
+			if (!couter)
+			{
+				if (!m_firstName) {
+					m_firstName = new char[strlen(stringIn) + 1];
+					strcpy(m_firstName, stringIn);
+				}
+				else if (!m_middleName) {
+					m_middleName = new char[strlen(stringIn) + 1];
+					strcpy(m_middleName, stringIn);
+				}
+				else if (!m_lastName) {
+					m_lastName = new char[strlen(stringIn) + 1];
+					strcpy(m_lastName, stringIn);
+				}
+			}
+			else {
+				delete[] m_firstName;
+				delete[] m_middleName;
+				delete[] m_lastName;
+				setSafeAndEmpty();
+			}
+		}
+		return *this;
+	}
 
+	// Queriers //
+	void Name::extractChar(std::istream& istr, char ch) const {
+		char nextChar;
+		nextChar = istr.peek();
+		if (nextChar == ch) {
+			istr.ignore();
+		}
+		else {
+			istr.ignore(1000, ch);
+			istr.setstate(ios::failbit);
+		}
+	}
+	
+	Name::operator bool() {
+		return m_firstName;
+	}
 
+	std::istream& Name::operator>>(std::istream istr){
+		char tempFirstName[20]{};
+		char tempLastName[20]{};
+		char tempMiddleName[20]{};
+		istr.get(tempFirstName, ' ');
+		extractChar(istr, ' ');
+		// Need to look at the string class before actually do this!!!!//
+	}
 
+	std::ostream& Name:: operator << (std::ostream ostr) {
+		if (m_firstName&&m_middleName&&m_lastName){
+			ostr << m_firstName << " " << m_middleName << " " << m_lastName << endl;
+			if (m_middleName[1]=='.'){
+				
+			}
+		}
+		
+		// need to develop the the short format//
+
+		else if (!m_middleName && m_firstName && m_lastName){
+			ostr << m_firstName << " " << m_lastName << endl;
+		}
+		
+		else if (!m_middleName&&!m_lastName&&m_firstName){
+			ostr << m_firstName << endl;
+		}
+
+		else{
+			ostr << "Bad Name" << endl;
+		}
+	}
 
 }

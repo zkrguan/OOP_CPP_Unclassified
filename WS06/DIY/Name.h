@@ -40,14 +40,16 @@ namespace sdds{
 		Name(const Name& copySrc);
 		Name& operator =(const Name& asnFrom);
 		~Name();
+		// queriers//
+		void extractChar(std::istream& istr, char ch) const;
+		operator bool();
 		// modifers//
 		Name& setShort(bool flag);
-
-
-
-
+		Name& operator += (const char* incomingString);
+		std::istream& operator >> (std::istream istr);
+		std::ostream& operator << (std::ostream ostr);
 	};
-
+	
 	
 
 
