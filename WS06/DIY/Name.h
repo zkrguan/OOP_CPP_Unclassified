@@ -22,14 +22,13 @@ Date:   Reason:
 namespace sdds{
 	
 	class Name{	
-		char* m_firstName{};
-		char* m_middleName{};
-		char* m_lastName{}; 
+		char* m_firstName=nullptr;
+		char* m_middleName=nullptr;
+		char* m_lastName=nullptr; 
 		// private methods //
 		Name& setSafeAndEmpty();
 		bool validateEmpty(const char* Name)const;
-		Name& allocAndCopy(const char* Name);
-		
+		void deallocate();
 	public:
 		// constructors //
 		Name();
@@ -41,14 +40,18 @@ namespace sdds{
 		Name& operator =(const Name& asnFrom);
 		~Name();
 		// queriers//
-		void extractChar(std::istream& istr, char ch) const;
 		operator bool();
 		// modifers//
 		Name& setShort(bool flag);
 		Name& operator += (const char* incomingString);
-		std::istream& operator >> (std::istream istr);
-		std::ostream& operator << (std::ostream ostr);
+		std::istream& read(std::istream& istr);
+		std::ostream& display(std::ostream& ostr)const;
+		Name& set(const char* fN, const char* mN, const char* lN);
+		Name& set(const char* FN, const char* LN);
+		Name& set(const char* FN);
 	};
+	std::istream& operator >> (std::istream& istr, Name& name);
+	std::ostream& operator << (std::ostream& ostr, const Name& name);
 	
 	
 

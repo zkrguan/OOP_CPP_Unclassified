@@ -1,0 +1,14 @@
+/* ------------------------------------------------------
+I have done all the writing by myself. 
+Workshop 6 reflect
+Course title:	    OOP244 NBB
+Version:    	    1
+student:              Zhaokai Guan
+Student Num:          130988215
+Email:                zguan25@myseneca.ca
+Date:                 March 05th 2022
+Revision History
+-----------------------------------------------------------
+Date:   Reason:
+-----------------------------------------------------------*/
+	This workshop is one of the most brutal assignments from this course, and I spent almost 3 days on completing this. However, I did learn a lot by finishing this. To be more specific, I finally understand why professor Fardad like to use the functions that returns or receiving a reference of an istream or ostream. It is not just for the cascading in the client code or another functions. More importantly, we could use the that reference to read or write formatted data by passing the file IO operators. In this way, one function can handle two tasks at the same time without overloading the function. Compared to C, this is actually so advanced and saves a lot of hassles. The other thing I learned from this workshop is I could actually practice one more time on the rule of three. Although I made so many mistakes at the beginning when I first building them, I forced myself to not look at the notes until I am really stuck. In this way I could memorize all the knowledge by learning again. And the other thing is I self studied some built in methods of the string class which greatly helped me to complete the workshop. I was really excited to make it work.  Some of the moves I made in the read function were actually making me thrilled. My improvement on coding is actually visible by looking at the workshops I completed. 
