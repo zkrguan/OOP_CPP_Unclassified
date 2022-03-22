@@ -1,0 +1,18 @@
+/* ------------------------------------------------------
+I have done all the writing by myself 
+
+Workshop 7 part 2
+Course title:OOP244 NBB
+Module:      reflect
+Filename:    reflect.txt
+Version:     1
+student:	 Zhaokai Guan
+Student Num: 130988215
+Email:       zguan25@myseneca.ca
+Date:        Mar 15th 2022
+
+Revision History
+-----------------------------------------------------------
+Date:   Reason:
+-----------------------------------------------------------*/
+Since the week after study break, the study is actually getting increasingly intense. For this workshop and the milestone one and two, I pretty much finished these assignments as fast as I can. Sometimes, I am even surprised that I could actually code this fast. As far I as know, speed coding is also important in my future career. Anyways, I feel like the project milestone is pretty much a great review of what I have studied in the previous weeks. As for the lab7, it is more beneficial to me personally because I could actually understand all the concepts studied from the video which professor and this week’s lecture. Basically, I had the chance to practice the how to make the methods from the base class virtual, the meaning of the protected, and how to build a class based on the other class. I have to admit that inheritance is actually more difficult than the dynamic memory management and the operator overload because there are so many things to be considered on before we even start actually coding it out. However, I really hope I could actually have a deeper understanding after more practices related to this. One day, I am very sure that the skills and the sick moves from the inheritance of the OOP will be part of my muscle memory just like the dynamic memory management I learned at the beginning of the semester.  
