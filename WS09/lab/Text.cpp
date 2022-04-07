@@ -23,11 +23,7 @@ Date:   Reason:
 #include "Text.h"
 namespace sdds {
    const char& sdds::Text::operator[](int index) const{
-      char res{};
-      if (m_content&&index<strlen(m_content)){
-         res = m_content[index];
-      }
-      return res;
+      return (m_content && unsigned(index) < strlen(m_content)? m_content[index]:'\0');
    }
    Text::Text(Text& src){
       *this = src;
@@ -43,7 +39,7 @@ namespace sdds {
    std::istream& Text::read(std::istream& istr){
       delete[]m_content;
       m_content = new char[getFileLength(istr) + 1];
-      istr.get(m_content, getFileLength(istr),EOF);
+      istr.get(m_content, getFileLength(istr)+1,EOF);
       if (m_content){
          istr.clear();
       }

@@ -19,7 +19,6 @@ Date:   Reason:
 -----------------------------------------------------------*/
 #ifndef SDDS_TEXT_H
 #define SDDS_TEXT_H
-
 namespace sdds {
 	class Text{
 	private:

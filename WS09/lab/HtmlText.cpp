@@ -46,7 +46,7 @@ namespace sdds {
       bool MS = false;
       ostr << "<html><head><title>";
       // use tenary to make it concise //
-      ostr << (m_title ? "m_title" : "No Title");
+      ostr << (m_title ? m_title : "No Title");
       ostr << "</title></head>\n<body>\n";
       if (m_title){
          ostr << "<h1>" << m_title << "</h1>\n";
