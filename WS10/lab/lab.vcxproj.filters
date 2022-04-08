@@ -27,10 +27,10 @@
     <ClInclude Include="Employee.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="temps.h">
+    <ClInclude Include="Collection.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Collection.h">
+    <ClInclude Include="temps.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

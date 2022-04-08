@@ -19,13 +19,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -79,9 +79,9 @@
     <ClInclude Include="Car.h" />
     <ClInclude Include="Displayable.h" />
     <ClInclude Include="Employee.h" />
-    <ClInclude Include="temps.h" />
     <ClInclude Include="Collection.h" />
     <ClInclude Include="Student.h" />
+    <ClInclude Include="temps.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Car.cpp" />

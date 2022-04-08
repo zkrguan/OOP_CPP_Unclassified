@@ -1,0 +1,52 @@
+/* ------------------------------------------------------
+I have done all the writing myself.
+
+Workshop 10  part 2
+Course title:OOP244 NBB
+Filename:    Reflect
+Version:     1
+student:	Zhaokai Guan
+Student Num: 130988215
+Email:       zguan25@myseneca.ca
+Date:        Apl 08 2022
+
+Revision History
+-----------------------------------------------------------
+Date:   Reason:
+-----------------------------------------------------------*/
+
+First of all, I copied and pasted all the template requirement over here.
+1. For the function template select.
+/// <summary>
+/// type's requirement:
+/// type's == operator must be overloaded for comparing both types of the values. 
+/// type's =  (assignment) operator must be overloaded for copying values.
+/// 
+/// Collection's requirement:
+/// Collection must have the subscribe operator [] overloaded to return a
+/// modifiable type reference element back. ( so the type's assignment operator    can be used)
+/// to assign right opponent’s value onto the left opponent’s value. 
+/// 
+/// </summary>
+
+2. For the function template printCollection
+   /// <summary>
+   /// t's requirement 
+   /// The insertion operator (<<) must be overloaded, 
+   /// so the function can use cout to directly invoke the type's 
+   /// display method. ( implemented by inherited from the interface 
+   /// displayable )
+   /// 
+   /// Collection's requirement 
+   /// Again the subscribe operator must be overloaded to return an 
+   /// CONST type reference in order to invoke the display method. 
+   /// 
+   /// </summary>
+
+Reflection:
+This is the last workshop for OOP244 this semester. The biggest take away is the template for sure. I learned how powerful the template could be. Instead of the having a function overloaded multiple times, I could just have one template function to reduce all the code works, which is shocking that how our coder pioneers came out this idea. And the template could also be used on a class. To be honest, I was shocked that how the delicate the collection module was built. When I fully understood the code from this workshop, I was literally speechless. How could I ever code like this? 
+The biggest difficulty I was facing must be understanding the code written by the profs. Especially, the collection module. If the template for the module’s type is compound type, things could be a little complicated to understand. Also because of the complex syntax, I was actually grinding the code line by line to understand. However, once I fully understand the collection module, the actual coding part only took me 10 mins to finish. 
+Since this might be the last homework I am working on, there is something I would like to say to my prof Fardad. You are the best coding professor I have met so far. Your energy will enlighten me to always study further in the programming field. I hope I could meet you again in the future but in all likelihood it is not gonna to happen. I wish you all the best and if one day I ever became to a famous coder, I will tell everyone Fardad is my coding mentor. By showing all the C++ sick moves, he made me actually love the studying coding. 
+
+
+
