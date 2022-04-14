@@ -5,7 +5,7 @@ Workshop 10  part 2
 Course title:OOP244 NBB
 Filename:    Reflect
 Version:     1
-student:	Zhaokai Guan
+student:	 Zhaokai Guan
 Student Num: 130988215
 Email:       zguan25@myseneca.ca
 Date:        Apl 08 2022
@@ -17,29 +17,38 @@ Date:   Reason:
 
 First of all, I copied and pasted all the template requirement over here.
 1. For the function template select.
-/// <summary>
-/// type's requirement:
-/// type's == operator must be overloaded for comparing both types of the values. 
-/// type's =  (assignment) operator must be overloaded for copying values.
-/// 
-/// Collection's requirement:
-/// Collection must have the subscribe operator [] overloaded to return a
-/// modifiable type reference element back. ( so the type's assignment operator    can be used)
-/// to assign right opponent’s value onto the left opponent’s value. 
-/// 
-/// </summary>
-
+   /// <summary>
+   /// type's requirement:
+   /// for the compound type:
+   /// type's == operator must be overloaded for comparing both types of the values. 
+   /// type's =  (assignment) operator must be overloaed for copying values.
+   /// for primaritive type: 
+   /// the type must be able to be compared by == and assigned by using =. 
+   /// e.g int double float etc can be compared by == and assigned by =. 
+   /// 
+   /// Collection's requirement:
+   /// Collection needs the default constructor for creating instance of the collection.
+   /// Collection must have the subscribe operator [] overloaded to return an 
+   /// modifiable type reference element back. ( so the type's assignment operator can be used 
+   /// to assign right oppnent's value onto the left oppnent's value. 
+   /// 
+   /// </summary>
 2. For the function template printCollection
    /// <summary>
    /// t's requirement 
+   /// 
+   /// for the compound type:
    /// The insertion operator (<<) must be overloaded, 
    /// so the function can use cout to directly invoke the type's 
    /// display method. ( implemented by inherited from the interface 
    /// displayable )
    /// 
+   /// for the primaritive type:
+   /// there is no specific requirements . 
+   /// 
    /// Collection's requirement 
    /// Again the subscribe operator must be overloaded to return an 
-   /// CONST type reference in order to invoke the display method. 
+   /// CONST type reference in order to inovke the display method. 
    /// 
    /// </summary>
 

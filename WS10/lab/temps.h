@@ -17,28 +17,28 @@ Revision History
 -----------------------------------------------------------
 Date:   Reason:
 -----------------------------------------------------------*/
-
 #ifndef SDDS_TEMPS_H
 #define SDDS_TEMPS_H
 #include <iostream>
 #include "Collection.h"
 namespace sdds {
+
    /// <summary>
    /// type's requirement:
+   /// for the compound type:
    /// type's == operator must be overloaded for comparing both types of the values. 
    /// type's =  (assignment) operator must be overloaed for copying values.
+   /// for primaritive type: 
+   /// the type must be able to be compared by == and assigned by using =. 
+   /// e.g int double float etc can be compared by == and assigned by =. 
    /// 
    /// Collection's requirement:
+   /// Collection needs the default constructor for creating instance of the collection.
    /// Collection must have the subscribe operator [] overloaded to return an 
    /// modifiable type reference element back. ( so the type's assignment operator can be used 
    /// to assign right oppnent's value onto the left oppnent's value. 
    /// 
    /// </summary>
-   /// <typeparam name="type"></typeparam>
-   /// <param name="arr"></param>
-   /// <param name="size"></param>
-   /// <param name="cmpTo"></param>
-   /// <returns></returns>
    template <typename type>
    Collection<type> select(const type* arr, int size, const type& cmpTo ) {
       int matches=0;
@@ -60,21 +60,21 @@ namespace sdds {
 
    /// <summary>
    /// t's requirement 
+   /// 
+   /// for the compound type:
    /// The insertion operator (<<) must be overloaded, 
    /// so the function can use cout to directly invoke the type's 
    /// display method. ( implemented by inherited from the interface 
    /// displayable )
+   /// 
+   /// for the primaritive type:
+   /// there is no specific requirements . 
    /// 
    /// Collection's requirement 
    /// Again the subscribe operator must be overloaded to return an 
    /// CONST type reference in order to inovke the display method. 
    /// 
    /// </summary>
-   /// <typeparam name="type"></typeparam>
-   /// <param name="arr"></param>
-   /// <param name="size"></param>
-   /// <param name="cmpTo"></param>
-   /// <returns></returns>
    template <typename t>
    void printCollection(const Collection<t>& src, const char* title) {
       std::cout << title << std::endl;
@@ -82,5 +82,6 @@ namespace sdds {
          std::cout << src[i] << std::endl;
       }
    }
+   
 }
 #endif // !SDDS_TEMPS_H
