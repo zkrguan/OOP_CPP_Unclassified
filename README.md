@@ -1,4 +1,4 @@
-# OOP244Works
-- Name: ZHaokai Guan
-- Student Number: 130988215
-- Seneca E-mail: zguan25@myseneca.ca
+# Some old works I did at school. Profs already deprecated these WSs and Assignments. It is safe to switch to public mode.
+## All the good habits are learned from these works. 
+## Those OOP pillars are engraved in brain now. 
+## Templates, virtual function and dynamic dispatch, interface, abstract class, DMA. All the good memories...
